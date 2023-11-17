@@ -15,8 +15,8 @@ echo -e "\e[1;34m
 
 # Atualiza os repositórios e instala dependências
 echo "Atualizando repositórios e instalando dependências..."
-sudo apt update && sudo apt upgrade -y
-sudo apt install neofetch -y
+ apt update &&  apt upgrade -y
+ apt install neofetch -y
 
 # Pergunta pelo nome para o PS1
 read -p "Digite seu nome para ser exibido no prompt (PS1): " nome_usuario
