@@ -48,14 +48,14 @@ clear
 neofetch
 
 # Configuração do PS1 (prompt)
-PS1='\\[\\033[1;31m\\]╭──\\[\\033[1;30m\\](\\[\\033[1;35m\\]$nome_usuario\\[\\033[1;30m\\]@\\[>\\]
+PS1='\[\033[1;31m\]╭──\[\033[1;30m\](\[\033[1;35m\]$nome_usuario\[\033[1;30m\]@\[\033[1;32m\]\h\[\033[1;30m\])-\[\033[1;34m\](\[\033[1;32m\]\w\[\033[1;34m\])\n\[\033[1;31m\]╰──\[\033[1;32m\]❯❯\[\033[0m\] '
 
 # Verifica a senha de acesso (opcional)
-if [ -n "\$senha_acesso" ]; then
+if [ -n "$senha_acesso" ]; then
     read -s -p "Digite a senha para acessar o Termux: " senha_digitada
     echo
 
-    if [ "\$senha_digitada" != "\$senha_acesso" ]; then
+    if [ "$senha_digitada" != "$senha_acesso" ]; then
         echo "Senha incorreta. Saindo..."
         exit 1
     fi
@@ -68,17 +68,17 @@ export LS_COLORS="di=38;5;196:fi=38;5;46"
 alias ls="ls --color=auto --classify"
 
 # Alias para o comando ls com emojis indicando pastas e arquivos
-alias lse="ls | sed 's/^\\(.*\\//)\\1📁/;s/^\\(.*\\)/\\1📄/'"
+alias lse="ls | sed \"s/^\(.*\/\)/\1📁/;s/^\(.*\)/\1📄/\""
 
 # Cores para diretórios e arquivos
-LS_COLORS=\$LS_COLORS:'di=1;34:'
-LS_COLORS=\$LS_COLORS:'*.txt=1;31:'
-LS_COLORS=\$LS_COLORS:'*.sh=1;32:'
+LS_COLORS=$LS_COLORS:'di=1;34:'
+LS_COLORS=$LS_COLORS:'*.txt=1;31:'
+LS_COLORS=$LS_COLORS:'*.sh=1;32:'
 export LS_COLORS
 
 # Função para destacar comandos inexistentes
 command_not_found_handle() {
-    echo -e "\[\033[1;31m\]Comando não encontrado: \$1\[\033[0m\]"
+    echo -e "\[\033[1;31m\]Comando não encontrado: $1\[\033[0m\]"
 }
 
 # Funções adicionais
