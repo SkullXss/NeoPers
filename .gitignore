@@ -1,0 +1,15 @@
+# .gitignore
+# Ignorar arquivos de sistema
+.DS_Store
+
+# Ignorar arquivos de configuração do sistema
+Thumbs.db
+desktop.ini
+
+# Ignorar arquivos temporários
+*.swp
+*~
+
+# Ignorar diretórios específicos
+node_modules/
+build/
